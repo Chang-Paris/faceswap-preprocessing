@@ -9,18 +9,33 @@ The scripts under this repository will split whole face images set evenly into 1
 After having obtained cleaned face set with Faceswap, it renames the face images and group all chunks back to one folder.
 Then user could use Faceswap to re-generate .fsa alignment file.
 
+## Environment
+```markdown
+pip install -r requirements.txt
+```
+
 ## Usage
 ### Downloader
 Use this module to download all videos from excel sheet's url
+```markdown
+python downloader.py
+```
+
 
 ### Extractor
 To create a training dataset of Faceswap, use this module to randomly pick up frames from each video.
 Number of face images is defined by *SAMPLE_PER_VIDEO*.
+```markdown
+python extractor.py
+```
 
 ### Splitter
 To clean the extracted face images of source video, use splitter to divide all face images of a large video into chunks.
 The original face images are moved to chunks. The number of chunks are define in *GROUP*.
 I recommend having no more than 10k face images of size 64*64 per chunk on a 32G RAM PC.
+```markdown
+python splitter.py
+```
 
 ### Renamer
 Run Faceswap Sorting functionality under each chunk will create sub-folders, if use "FACE" as
@@ -30,4 +45,7 @@ It also renames face images of other sorted folder with incrementing index value
 *max_index(face_000_by_face)*.
 
 Then use Faceswap to update alignment file.
+```markdown
+python renamer.py
+```
  

@@ -1,0 +1,9 @@
+.idea/
+__pycache__/
+
+*.xls
+*.mp4
+*.fsa
+*.jpg
+*.png
+
